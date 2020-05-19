@@ -11,9 +11,9 @@
     "air-schema-tree": "git+https://github.com/artifishional/air-schema-tree.git"
   },
   "dependencies": {
-    "air-m2": "^0.6.5"
+    "air-m2": "^0.7.5"
   },
   "devDependencies": {
-    "air-application": "^2.0.1"
+    "air-application": "^2.0.2"
   }
 }
