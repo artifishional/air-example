@@ -2,7 +2,7 @@
   "name": "air-example",
   "version": "1.0.0",
   "main": "src/index.js",
-  "author": "ai.2019",
+  "author": "/ai",
   "license": "MIT",
   "scripts": {
     "dev": "node --experimental-modules ./node_modules/air-m2-builder2/bin/server.mjs --dev-server"
@@ -11,9 +11,10 @@
     "air-schema-tree": "git+https://github.com/artifishional/air-schema-tree.git"
   },
   "dependencies": {
-    "air-m2": "^0.7.5"
+    "air-stream": "git+ssh://git@github.com:artifishional/air-stream.git#full-connectable-io",
+    "air-m2": "git+ssh://git@github.com:artifishional/air-m2.git#s2s"
   },
   "devDependencies": {
-    "air-application": "^2.0.2"
+    "air-m2-builder2": "git+ssh://git@github.com:artifishional/air-m2-builder2.git#s2s"
   }
 }
