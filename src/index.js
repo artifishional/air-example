@@ -1,4 +1,4 @@
-import {stream} from "m2"
+import { stream2 as stream } from 'm2';
 import adaptive from "./adaptive"
 import kit from "./kit"
 import keyframes from "./keyframes"
@@ -27,6 +27,14 @@ export default {
                 emt([{lazydata: 777}]);
             }, 5000 );
         } );
+    },
+    ['fade-in-out']() {
+        return stream.fromCbFunc((cb) => {
+            cb([{ tee: 1 }]);
+            setTimeout(() => cb([{ tee: 0 }]), 6000);
+            setTimeout(() => cb([{ tee: 1 }]), 9000);
+            setTimeout(() => cb([{ tee: 0 }]), 12000);
+        });
     },
     adaptive,
     kit,

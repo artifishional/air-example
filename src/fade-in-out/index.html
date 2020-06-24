@@ -1,0 +1,18 @@
+<unit stream = ./fade-in-out>
+    <unit tee() = tee>
+        <keyframe name = fade-in prop = {duration:5}>
+            <key offset = 0 prop = {opacity:0}></key>
+            <key offset = 1 prop = {opacity:1}></key>
+        </keyframe>
+        <keyframe name = fade-out prop = {duration:5}>
+            <key offset = 0 prop = {opacity:1}></key>
+            <key offset = 1 prop = {opacity:0}></key>
+        </keyframe>
+        <div style = '
+            background-color: green;
+            color: lemonchiffon;
+            font-family: monospace;
+            padding: 2px;
+        '>fade-in-out</div>
+    </unit>
+</unit>
