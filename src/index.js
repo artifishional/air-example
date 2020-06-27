@@ -22,11 +22,11 @@ export default {
 
     },
     lazy() {
-        return stream( (emt) => {
-            setTimeout( () => {
-                emt([{lazydata: 777}]);
-            }, 5000 );
-        } );
+        return stream.fromCbFunc((cb) => {
+            setTimeout(() => {
+                cb([{ lazydata: 777 }])
+            }, 1000);
+        });
     },
     ['fade-in-out']() {
         return stream.fromCbFunc((cb) => {

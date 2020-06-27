@@ -1,24 +1,30 @@
 <unit>
 
-    <unit stream = "./lazy" lazy>
+    <unit stream = "./lazy">
 
         <unit key = loader>
-
-            <keyframe prop = {duration:5} name = fade-out>
-                <key offset = 0 prop = {scale:1}></key>
-                <key offset = 1 prop = {scale:1.1}></key>
+            <keyframe prop = {duration:1} name = fade-in>
+                <key offset = 0 prop = {translateY:-25,opacity:0}></key>
+                <key offset = 1 prop = {translateY:0,opacity:1}></key>
             </keyframe>
-
-            I am preloader
-
+            <keyframe prop = {duration:1} name = fade-out>
+                <key offset = 0 prop = {translateY:0,opacity:1}></key>
+                <key offset = 1 prop = {translateY:25,opacity:0}></key>
+            </keyframe>
+            <div>I am preloader</div>
         </unit>
 
-        <keyframe prop = {duration:5} name = fade-in>
-            <key offset = 0 prop = {scale:1}></key>
-            <key offset = 1 prop = {scale:1.1}></key>
-        </keyframe>
-
-        <div>I am lazy. My lazy data: <unit>{(lazydata)}</unit></div>
+        <unit lazy>
+            <keyframe prop = {duration:1}>
+                <key offset = 0 prop = {color:'#0026ff'}></key>
+                <key offset = 1 prop = {color:'#ff0000'}></key>
+            </keyframe>
+            <keyframe prop = {duration:1} name = fade-in>
+                <key offset = 0 prop = {translateY:-25,opacity:0}></key>
+                <key offset = 1 prop = {translateY:0,opacity:1}></key>
+            </keyframe>
+            <div>I am lazy. My lazy data: <!--<unit>{lazydata}</unit>--></div>
+        </unit>
 
     </unit>
 
