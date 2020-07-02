@@ -1,11 +1,22 @@
-import {stream} from "m2"
+import { stream2 as stream } from 'm2';
 
-export default () => stream(emt => {
-  emt([{ blocks: [
-      { id: 0, type: "red", msg: "someone-text1" },
-      { id: 1, type: "red", msg: "someone-azaza" },
-      { id: 2, type: "blue", msg: "someone-lkj" },
-      { id: 3, type: "blue", msg: "" },
-      { id: 4, type: "red", msg: "someone-485" },
-  ] }]);
-});
+const { random } = Math;
+
+export default () => stream
+  .fromCbFunc((cb) => {
+    setInterval(() => {
+      cb([{
+        blocks: Array
+          .from(
+            { length: random() * 10 + 1 | 0 },
+            (_, id) => ({
+              id,
+              type: ['red', 'green', 'blue'][random() * 3 | 0],
+              msg: String.fromCharCode(65 + id)
+            })
+          )
+          .sort(() => random() - 0.5)
+      }]);
+    }, 2000);
+  })
+  .store()

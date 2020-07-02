@@ -6,6 +6,13 @@ import customPathname from "./custom-pathname"
 
 export default {
 
+    intl: ['intl', {
+        id: 'intl',
+        source: () =>
+          stream.fromCbFunc((cb) => {
+              cb({ });
+          }).store(),
+    }],
     keyframes,
     owner() {
         return stream( (emt, { hook } ) => {
@@ -26,7 +33,7 @@ export default {
             setTimeout(() => {
                 cb([{ lazydata: 777 }])
             }, 1000);
-        });
+        }).store();
     },
     ['fade-in-out']() {
         return stream.fromCbFunc((cb) => {

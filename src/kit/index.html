@@ -1,31 +1,68 @@
 <unit>
 
     <unit stream = @kit kit = (blocks){id} >
-        <unit tee = {type:"blue"}>
-            <unit>
-                <style>
-                    :scope {
-                        width: 100px;
-                        height: 100px;
-                        background-color: blue;
-                        color: white;
-                    }
-                </style>
-                <div><unit>{(msg)}</unit></div>
-            </unit>
+        <unit key = a tee = {type:"blue"}>
+            <keyframe prop = {duration:2.5,easing:"easeOutBounce"} name = fade-in>
+                <key offset = 0 prop = {translateY:-100,opacity:0}></key>
+                <key offset = 1 prop = {translateY:0,opacity:1}></key>
+            </keyframe>
+            <style>
+                :scope {
+                    float: left;
+                    margin: 1px;
+                    font-size: 60px;
+                    font-family: monospace;
+                    line-height: 100px;
+                    text-align: center;
+                    width: 100px;
+                    height: 100px;
+                    background-color: blue;
+                    color: white;
+                }
+            </style>
+            <div><unit>`${msg}`</unit></div>
         </unit>
         <unit tee = {type:"red"}>
-            <unit>
-                <style>
-                    :scope {
-                        width: 100px;
-                        height: 100px;
-                        background-color: red;
-                        color: white;
-                    }
-                </style>
-                <div><unit>{(msg)}</unit></div>
-            </unit>
+            <keyframe prop = {duration:2.5,easing:"easeOutBounce"} name = fade-in>
+                <key offset = 0 prop = {translateX:-100,opacity:0}></key>
+                <key offset = 1 prop = {translateX:0,opacity:1}></key>
+            </keyframe>
+            <style>
+                :scope {
+                    float: left;
+                    margin: 1px;
+                    font-size: 40px;
+                    font-family: monospace;
+                    line-height: 100px;
+                    text-align: center;
+                    width: 100px;
+                    height: 100px;
+                    background-color: red;
+                    color: white;
+                }
+            </style>
+            <div><unit>`${msg}`</unit></div>
+        </unit>
+        <unit tee = {type:"green"}>
+            <keyframe prop = {duration:2.5,easing:"easeOutBounce"} name = fade-in>
+                <key offset = 0 prop = {translateX:100,opacity:0}></key>
+                <key offset = 1 prop = {translateX:0,opacity:1}></key>
+            </keyframe>
+            <style>
+                :scope {
+                    float: left;
+                    margin: 1px;
+                    font-size: 20px;
+                    font-family: monospace;
+                    line-height: 100px;
+                    text-align: center;
+                    width: 100px;
+                    height: 100px;
+                    background-color: green;
+                    color: white;
+                }
+            </style>
+            <div><unit>`${msg}`</unit></div>
         </unit>
     </unit>
 
