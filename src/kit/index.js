@@ -4,11 +4,11 @@ const { random } = Math;
 
 export default () => stream
   .fromCbFunc((cb) => {
-    setInterval(() => {
+    return setInterval(() => {
       cb([{
         blocks: Array
           .from(
-            { length: random() * 10 + 1 | 0 },
+            { length: random() * 100 + 1 | 0 },
             (_, id) => ({
               id,
               type: ['red', 'green', 'blue'][random() * 3 | 0],
