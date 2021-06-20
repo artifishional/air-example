@@ -3,6 +3,8 @@ import adaptive from "./adaptive"
 import kit from "./kit"
 import keyframes from "./keyframes"
 import customPathname from "./custom-pathname"
+import animationOffset from "./animation-offset"
+import svgSprite from "./svg-sprite"
 
 export default {
 
@@ -30,6 +32,8 @@ export default {
     },
     adaptive,
     kit,
-    ["custom-pathname"]: customPathname
+    ["custom-pathname"]: customPathname,
+    ["animation-offset"]: animationOffset,
+    ["svg-sprite"]: svgSprite
 
 }
